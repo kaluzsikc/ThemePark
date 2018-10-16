@@ -1,3 +1,4 @@
+import Park.Visitor;
 import Stall.TobaccoStall;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,10 +8,15 @@ import static org.junit.Assert.assertEquals;
 public class TobaccoStallTest {
 
     TobaccoStall tobaccoStall;
+    Visitor visitor1;
+    Visitor visitor2;
 
     @Before
     public void before(){
+
         tobaccoStall = new TobaccoStall("Tobacco Stall", "Bob", 5);
+        visitor1 = new Visitor(10, 140, 10.10);
+        visitor2 = new Visitor(30, 180, 20.10);
     }
 
     @Test
@@ -26,5 +32,15 @@ public class TobaccoStallTest {
     @Test
     public void hasParkingSpot(){
         assertEquals(5, tobaccoStall.getParkingSpot());
+    }
+
+    @Test
+    public void isAllowedTrue(){
+        assertEquals(true, tobaccoStall.isAllowedTo(visitor2));
+    }
+
+    @Test
+    public void isAllowedFalse(){
+        assertEquals(false, tobaccoStall.isAllowedTo(visitor1));
     }
 }
