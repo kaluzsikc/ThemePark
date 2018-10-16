@@ -1,4 +1,9 @@
 package Attraction;
 
-public class Playground {
+public class Playground extends Attraction{
+
+    public Playground(String name){
+
+        super(name);
+    }
 }
