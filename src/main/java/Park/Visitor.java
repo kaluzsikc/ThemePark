@@ -1,3 +1,5 @@
+package Park;
+
 public class Visitor {
     private int age;
     private int height;
@@ -22,3 +24,4 @@ public class Visitor {
     }
 
 }
+

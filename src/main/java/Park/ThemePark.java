@@ -1,3 +1,5 @@
+package Park;
+
 import Attraction.Attraction;
 import Stall.Stall;
 
