@@ -1,3 +1,4 @@
+import Park.Visitor;
 import Stall.IceCreamStall;
 import org.junit.Before;
 import org.junit.Test;
@@ -6,10 +7,12 @@ import static org.junit.Assert.assertEquals;
 
 public class IceCreamStallTest {
     IceCreamStall iceCreamStall;
+    Visitor visitor;
 
     @Before
     public void before(){
         iceCreamStall = new IceCreamStall("Ice Cream Van", "Bob", 10, 10);
+        visitor = new Visitor(10, 140, 10.10);
     }
 
     @Test
@@ -30,5 +33,10 @@ public class IceCreamStallTest {
     @Test
     public void hasRating(){
         assertEquals(10, iceCreamStall.getRating());
+    }
+
+    @Test
+    public void hasPrice(){
+        assertEquals(2.80, iceCreamStall.priceFor(visitor), 0.01);
     }
 }
