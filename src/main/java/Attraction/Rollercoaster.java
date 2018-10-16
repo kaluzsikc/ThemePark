@@ -1,9 +1,10 @@
 package Attraction;
 
 import Interfaces.ISecurity;
+import Interfaces.ITicketed;
 import Park.Visitor;
 
-public class Rollercoaster extends Attraction implements ISecurity {
+public class Rollercoaster extends Attraction implements ISecurity, ITicketed {
 
     public Rollercoaster(String name, int rating){
         super(name, rating);
@@ -14,6 +15,17 @@ public class Rollercoaster extends Attraction implements ISecurity {
             return true;
         }
         return false;
+    }
+
+    public double defaultPrice(){
+        return 8.40;
+    }
+
+    public double priceFor(Visitor visitor){
+        if (visitor.getHeight() > 200){
+            return defaultPrice() *2;
+        }
+        return defaultPrice();
     }
 
 

@@ -21,7 +21,6 @@ public class ThemePark {
     }
 
     public void visit(Visitor visitor, Attraction attraction){
-
     }
 
     public ArrayList<Attraction> getAttractions() {

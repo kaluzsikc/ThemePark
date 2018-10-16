@@ -19,7 +19,7 @@ public class RollercoasterTest {
         visitor1 = new Visitor(10, 140, 10.10);
         visitor2 = new Visitor(10, 150, 20.10);
         visitor3 = new Visitor(13, 140, 20.10);
-        visitor4 = new Visitor(30, 180, 20.10);
+        visitor4 = new Visitor(30, 210, 20.10);
     }
 
     @Test
@@ -55,6 +55,16 @@ public class RollercoasterTest {
     @Test
     public void hasRating(){
         assertEquals(10, rollercoaster.getRating());
+    }
+
+    @Test
+    public void hasPriceDefault(){
+        assertEquals(8.40, rollercoaster.priceFor(visitor1), 0.01);
+    }
+
+    @Test
+    public void hasPriceDouble(){
+        assertEquals(16.80, rollercoaster.priceFor(visitor4), 0.01);
     }
 
 }
