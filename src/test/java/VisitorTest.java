@@ -9,7 +9,7 @@ public class VisitorTest {
 
     @Before
     public void before(){
-        visitor = new Visitor(10, 140, 10);
+        visitor = new Visitor(10, 140, 10.10);
     }
 
     @Test
@@ -24,6 +24,6 @@ public class VisitorTest {
 
     @Test
     public void hasMoney(){
-        assertEquals(10, visitor.getMoney());
+        assertEquals(10.10, visitor.getMoney(), 0.01);
     }
 }
