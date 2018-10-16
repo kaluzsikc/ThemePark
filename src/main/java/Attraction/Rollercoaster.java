@@ -1,8 +1,20 @@
 package Attraction;
 
-public class Rollercoaster extends Attraction{
+import Interfaces.ISecurity;
+import Park.Visitor;
+
+public class Rollercoaster extends Attraction implements ISecurity {
 
     public Rollercoaster(String name){
         super(name);
     }
+
+    public boolean isAllowedTo(Visitor visitor){
+        if(visitor.getHeight() > 145 && visitor.getAge() > 12 ){
+            return true;
+        }
+        return false;
+    };
 }
+
+
