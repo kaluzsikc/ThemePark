@@ -1,6 +1,8 @@
 package Attraction;
 
-public abstract class Attraction {
+import Interfaces.IReviewed;
+
+public abstract class Attraction implements IReviewed {
 
     private String name;
     public int rating;
@@ -18,4 +20,6 @@ public abstract class Attraction {
     public int getRating() {
         return rating;
     }
+
+
 }
