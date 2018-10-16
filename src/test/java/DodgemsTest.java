@@ -9,11 +9,16 @@ public class DodgemsTest {
 
     @Before
     public void before(){
-        dodgems = new Dodgems("dodgems1");
+        dodgems = new Dodgems("dodgems1", 10);
     }
 
     @Test
     public void hasName(){
         assertEquals("dodgems1", dodgems.getName());
+    }
+
+    @Test
+    public void hasRating(){
+        assertEquals(10, dodgems.getRating());
     }
 }

@@ -1,5 +1,4 @@
 import Attraction.Park;
-import Attraction.Rollercoaster;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,11 +10,16 @@ public class ParkTest {
 
     @Before
     public void before(){
-        park = new Park("park1");
+        park = new Park("park1", 10);
     }
 
     @Test
     public void hasName(){
         assertEquals("park1", park.getName());
+    }
+
+    @Test
+    public void hasRating(){
+        assertEquals(10, park.getRating());
     }
 }

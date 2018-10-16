@@ -12,7 +12,7 @@ public class PlaygroundTest {
 
     @Before
     public void before(){
-        playground = new Playground("playground1");
+        playground = new Playground("playground1", 10);
         visitor1 = new Visitor(10, 140, 10.10);
         visitor2 = new Visitor(30, 180, 20.10);
     }
@@ -30,5 +30,10 @@ public class PlaygroundTest {
     @Test
     public void isNotAllowedOver15(){
         assertEquals(false, playground.isAllowedTo(visitor2));
+    }
+
+    @Test
+    public void hasRating (){
+        assertEquals(10, playground.getRating());
     }
 }
